@@ -1,8 +1,8 @@
-## This first unction creates a special "matrix object" that stores a matrix itself and its inverse.
+## This first function creates a special "matrix object" that stores a matrix itself and its inverse.
 
 
 makeCacheMatrix <- function(x = matrix()) {  ## creates the matrix object that takes in a matrix 'x' 
-        inverse<-NULL ## erases any cached inverse mean that may exist in variable
+        inverse<-NULL ## erases any cached inverse that may exist in variable
         set<-function(y){  ## method/function saves a new matrix 'y' we may want to insert into matrix object 
                 x<<-y  ## copies the matrix 'y' into variable x in parent scope 
                 inverse<<-NULL ## erases old cached inverse from previous matrix in parent scope 
@@ -17,8 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {  ## creates the matrix object that t
 }
 
 ##The next function returns the inverse of the matrix  if it exists,
-## otherwise the function will calculate the inverse matrix using the matrix object 
-## and return it. 
+## otherwise the function will calculate the inverse matrix using the matrix object and return it. 
 
 cacheSolve <- function(x, ...) {
         inverse<-x$getinverse()  ## use method to get inverse matrix from 'x' 
